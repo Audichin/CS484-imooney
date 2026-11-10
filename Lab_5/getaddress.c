@@ -39,23 +39,18 @@ int main(int argc, char* argv[])
     printf("Address info requested for %s \n", argv[1]);
     printf("----------------------------------------\n");
 
-    
-    // for (res != NULL) // Need to iterate though both IPV4 and V6 addresses from the linked list obtained
-    // {
-    //     if(/* condition*/) // starting with IPv4 addresses 
-    //     {
-    //         printf("IPV4: ");
-    //         /* code */
-    //     }
-    //     else if (/* condition */) // next with IPv6 addresses
-    //     {
-    //         printf("IPV6: ");
-    //         /* code */
-    //     }
-    //     else
-    //     {
-    //         /* code for if something isn't recognised*/
-    //     }
-    // }
+
+    for (p = res; p  != NULL; p -> ai_next) // Need to iterate though both IPV4 and V6 addresses from the linked list obtained
+    {                                       // p is a pointer to a struct addrinfo, which contains information about the address
+        if(p == AF_INET) // starting with IPv4 addresses 
+        {
+            printf("IPV4: ");
+
+        }
+        else if (p == AF_INET6) // next with IPv6 addresses
+        {
+            printf("IPV6: ");
+        }
+    }
 
 }
